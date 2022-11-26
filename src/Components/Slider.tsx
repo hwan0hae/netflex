@@ -7,18 +7,17 @@ import { IGetProgramResult } from "../api";
 const SliderWrapper = styled(motion.div)`
   position: relative;
   top: -230px;
-  margin-bottom: 12vw;
+  margin-bottom: 12.5vw;
   :hover {
     button {
       opacity: 1;
     }
   }
-
   @media screen and (max-width: 500px) {
-    top: calc(-230px - 30vw);
+    margin-bottom: 13vw;
   }
 `;
-
+//슬라이더 타이틀이랑 이미지 간격 확인
 const SliderTitle = styled(motion.div)`
   margin-bottom: 10px;
   font-size: 1.5vw;
@@ -27,6 +26,9 @@ const SliderTitle = styled(motion.div)`
 
   &:hover {
     filter: brightness(1.2);
+  }
+  @media screen and (max-width: 500px) {
+    margin-bottom: 7px;
   }
 `;
 

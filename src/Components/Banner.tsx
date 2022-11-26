@@ -14,17 +14,11 @@ const HomeBanner = styled.div<{ bgPhoto: string }>`
     url(${(props) => props.bgPhoto});
   background-size: cover;
   background-position: center;
-
-  @media screen and (max-width: 500px) {
-    justify-content: flex-start;
-  }
 `;
 
 const BannerItems = styled.div`
   @media screen and (max-width: 500px) {
-    position: relative;
     font-size: 10px;
-    top: 20vh;
   }
 `;
 
