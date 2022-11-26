@@ -34,7 +34,6 @@ const Title = styled.h2`
   margin-bottom: 20px;
 
   @media screen and (max-width: 500px) {
-    font-size: 3.5em;
     margin-bottom: 0.5em;
   }
 `;
@@ -44,9 +43,9 @@ const Overview = styled.div`
   margin-bottom: 20px;
 
   @media screen and (max-width: 500px) {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-    max-width: 60vw;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    max-width: 70vw;
   }
 `;
 const BannerBtnRow = styled.div`
@@ -74,7 +73,7 @@ const RunBtn = styled.button`
   }
 
   @media screen and (max-width: 500px) {
-    width: 12vw;
+    width: 10vw;
     height: 5vw;
   }
 `;

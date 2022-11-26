@@ -15,7 +15,7 @@ const SliderWrapper = styled(motion.div)`
   }
 
   @media screen and (max-width: 500px) {
-    top: -430px;
+    top: calc(-230px - 30vw);
   }
 `;
 
