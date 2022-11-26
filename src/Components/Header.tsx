@@ -75,7 +75,6 @@ const Search = styled.form`
     @media screen and (max-width: 500px) {
       height: 1rem;
       position: relative;
-      top: 1.9rem;
     }
   }
 `;
@@ -100,7 +99,6 @@ const SearchInput = styled(motion.input)`
   @media screen and (max-width: 500px) {
     padding: 3px 10px;
     padding-left: 20px;
-    top: 1.5rem;
     font-size: 1em;
   }
 `;
