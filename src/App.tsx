@@ -6,7 +6,7 @@ import Tv from "./Routes/Tv";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -14,7 +14,6 @@ export default function App() {
         <Route path="/tv" element={<Tv />} />
         <Route path="/tv/:id" element={<Tv />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/search?keyword" element={<Search />} />
       </Routes>
     </Router>
   );

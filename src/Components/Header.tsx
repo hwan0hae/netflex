@@ -13,6 +13,10 @@ const Nav = styled(motion.div)`
   top: 0;
   padding: 20px 3vw;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+
+  @media screen and (max-width: 500px) {
+    padding: 15px 3vw;
+  }
 `;
 const Col = styled.div`
   display: flex;
@@ -26,6 +30,11 @@ const Logo = styled(motion.svg)`
   path {
     stroke: black;
     stroke-width: 1px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 4rem;
+    margin-right: 30px;
   }
 `;
 const Items = styled.ul`
@@ -43,6 +52,10 @@ const Item = styled.li`
   &:hover {
     color: ${(props) => props.theme.white.lighter};
   }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.8em;
+  }
 `;
 
 const Search = styled.form`
@@ -58,6 +71,11 @@ const Search = styled.form`
     path {
       fill-rule: evenodd;
       clip-rule: evenodd;
+    }
+    @media screen and (max-width: 500px) {
+      height: 1rem;
+      position: relative;
+      top: 1.8rem;
     }
   }
 `;
@@ -78,6 +96,12 @@ const SearchInput = styled(motion.input)`
     border-color: gold;
     outline: none;
   }
+
+  @media screen and (max-width: 500px) {
+    padding: 3px 10px;
+    padding-left: 35px;
+    top: 1.5rem;
+  }
 `;
 
 const Circle = styled(motion.span)`
@@ -90,6 +114,10 @@ const Circle = styled(motion.span)`
   right: 0;
   margin: 0 auto;
   background-color: ${(props) => props.theme.white.lighter};
+
+  @media screen and (max-width: 500px) {
+    width: 0.8em;
+  }
 `;
 
 const logoVariants = {

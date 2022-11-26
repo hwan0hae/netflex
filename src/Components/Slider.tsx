@@ -6,12 +6,16 @@ import { IGetProgramResult } from "../api";
 
 const SliderWrapper = styled(motion.div)`
   position: relative;
-  top: -245px;
+  top: -230px;
   margin-bottom: 12vw;
   :hover {
     button {
       opacity: 1;
     }
+  }
+
+  @media screen and (max-width: 500px) {
+    top: -430px;
   }
 `;
 
@@ -40,7 +44,6 @@ const Box = styled(motion.div)<{ $bgPhoto: string }>`
   background-size: cover;
   background-position: center center;
   height: 10vw;
-  font-size: 64px;
   background-color: ${(props) => props.theme.black.veryDark};
 
   cursor: pointer;
@@ -61,7 +64,7 @@ const BoxInfo = styled(motion.div)`
   h4 {
     text-align: center;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1vw;
   }
 `;
 

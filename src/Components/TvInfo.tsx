@@ -10,7 +10,7 @@ import {
   MovieInfo as TvDetailInfo,
   MovieInfoWrapper as TvInfoWrapper,
   MovieInfoCover as TvInfoCover,
-  MovieInfoGenres,
+  MovieInfoGenres as TvInfoGenres,
   MovieInfoOverview as TvInfoOverview,
   MovieInfoPoster as TvInfoPoster,
   MovieInfoTitle as TvInfoTitle,
@@ -22,18 +22,9 @@ import {
   SimilarMoviesTitle as SimilarTvShowTitle,
 } from "./Info";
 
-const TvInfoGenres = styled(MovieInfoGenres)`
-  max-width: 25%;
-  ul {
-    li {
-      margin-bottom: 3px;
-    }
-  }
-`;
-
 const TvInfoSeasons = styled.ul`
+  font-size: 1.2vw;
   position: relative;
-  max-width: 70%;
 `;
 
 const TvInfoSeason = styled.li`
@@ -57,6 +48,11 @@ const TvInfoSeasonOverview = styled.p`
   padding: 10px;
   top: 100px;
   position: absolute;
+  font-size: 1.5em;
+  @media screen and (max-width: 500px) {
+    font-size: 1em;
+    top: 50px;
+  }
 `;
 
 export interface ITvInfoProps {

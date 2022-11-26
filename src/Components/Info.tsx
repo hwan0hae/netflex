@@ -23,7 +23,7 @@ export const MovieInfo = styled(motion.div)<{ scrolly: number }>`
   max-width: 750px;
   height: 90vh;
   top: ${(props) => props.scrolly + 50}px;
-  right: 0%;
+  right: 0;
   left: 0;
   margin: 0 auto;
   border-radius: 15px;
@@ -65,33 +65,35 @@ export const MovieInfoTitle = styled.h3`
   max-width: 80%;
 `;
 const MovieInfoTagline = styled.h5`
-  font-size: min(3vw, 28px);
-  max-width: 80%;
+  font-size: min(3vw, 2em);
+  margin-bottom: 3px;
 `;
 export const MovieInfoGenres = styled.div`
-  position: absolute;
-  top: 400px;
-  font-size: 14px;
-  right: 20px;
-
+  font-size: 1em;
   ul {
     li {
       border-radius: 3px;
       padding: 1px;
       color: ${(props) => props.theme.white.lighter};
       background-color: ${(props) => props.theme.black.lighter};
-      float: right;
+      float: left;
       margin-right: 4px;
+      margin-bottom: 3px;
     }
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.5em;
   }
 `;
 const MovieInfoTime = styled.div`
-  position: absolute;
-  top: 450px;
-  right: 20px;
-  font-size: 14px;
+  font-size: 0.8em;
   span {
     color: ${(props) => props.theme.white.lighter};
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.4em;
   }
 `;
 export const MovieInfoVote = styled.div`
@@ -108,11 +110,20 @@ export const MovieInfoVote = styled.div`
     font-size: 1.3vw;
     font-weight: 400;
   }
+
+  @media screen and (max-width: 500px) {
+    margin: -10px 0 -5px 0;
+  }
 `;
 
 export const MovieInfoOverview = styled.p`
   color: ${(props) => props.theme.white.lighter};
   margin-bottom: 20px;
+  font-size: 1em;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.5em;
+  }
 `;
 
 export const SimilarMoviesTitle = styled.div`
@@ -120,8 +131,11 @@ export const SimilarMoviesTitle = styled.div`
   justify-content: space-between;
   margin-bottom: 5px;
   h3 {
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: 400;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 0.7em;
   }
 `;
 export const SimilarMovies = styled.div`
@@ -154,6 +168,12 @@ export const SimilarMovie = styled(motion.div)`
     h3 {
       color: ${(props) => props.theme.white.lighter};
       font-weight: 400;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    h3 {
+      font-size: 0.5em;
     }
   }
 `;
