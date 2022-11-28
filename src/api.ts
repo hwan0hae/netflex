@@ -103,25 +103,25 @@ export interface IGetSearchData {
 /** getMovies */
 export async function getMovies() {
   const movies = <IGetMovies>{};
-  const playingMoives = await fetch(
+  const playingMoives = await axios.get(
     `${BASE_PATH}/movie/now_playing?api_key=${API_KEY}&language=ko-KR&page=1&region=kr`
-  ).then((response) => response.json());
-  movies.playing_movie = playingMoives;
+  );
+  movies.playing_movie = playingMoives.data;
 
-  const popularMoives = await fetch(
+  const popularMoives = await axios.get(
     `${BASE_PATH}/movie/popular?api_key=${API_KEY}&language=ko-KR&page=1&region=kr`
-  ).then((response) => response.json());
-  movies.popular_movie = popularMoives;
+  );
+  movies.popular_movie = popularMoives.data;
 
-  const topRated = await fetch(
+  const topRated = await axios.get(
     `${BASE_PATH}/movie/top_rated?api_key=${API_KEY}&language=ko-KR&page=1&region=kr`
-  ).then((response) => response.json());
-  movies.topRated_movie = topRated;
+  );
+  movies.topRated_movie = topRated.data;
 
-  const upComming = await fetch(
+  const upComming = await axios.get(
     `${BASE_PATH}/movie/upcoming?api_key=${API_KEY}&language=ko-KR&page=1&region=kr`
-  ).then((response) => response.json());
-  movies.upComing_movie = upComming;
+  );
+  movies.upComing_movie = upComming.data;
 
   return movies;
 }
@@ -129,15 +129,15 @@ export async function getMovies() {
 export async function getMovie(id: number) {
   const movie = <IGetMovie>{};
 
-  const movie_detail = await fetch(
+  const movie_detail = await axios.get(
     `${BASE_PATH}/movie/${id}?api_key=${API_KEY}&language=ko-KR`
-  ).then((response) => response.json());
-  movie.movie_detail = movie_detail;
+  );
+  movie.movie_detail = movie_detail.data;
 
-  const similar_movie = await fetch(
+  const similar_movie = await axios.get(
     `${BASE_PATH}/movie/${id}/similar?api_key=${API_KEY}&language=ko-KR&page=1`
-  ).then((response) => response.json());
-  movie.similar_movies = similar_movie;
+  );
+  movie.similar_movies = similar_movie.data;
 
   return movie;
 }
@@ -147,20 +147,20 @@ export async function getMovie(id: number) {
 export async function getTvShow() {
   const tvShow = <IGetTvShow>{};
 
-  const popularTv = await fetch(
+  const popularTv = await axios.get(
     `${BASE_PATH}/tv/popular?api_key=${API_KEY}&language=ko-KR&page=1`
-  ).then((response) => response.json());
-  tvShow.popular_tv = popularTv;
+  );
+  tvShow.popular_tv = popularTv.data;
 
-  const topRatedTv = await fetch(
+  const topRatedTv = await axios.get(
     `${BASE_PATH}/tv/top_rated?api_key=${API_KEY}&language=ko-KR&page=1`
-  ).then((response) => response.json());
-  tvShow.topRated_tv = topRatedTv;
+  );
+  tvShow.topRated_tv = topRatedTv.data;
 
-  const onTheAirTv = await fetch(
+  const onTheAirTv = await axios.get(
     `${BASE_PATH}/tv/on_the_air?api_key=${API_KEY}&language=ko-KR&page=1`
-  ).then((response) => response.json());
-  tvShow.onTheAir_tv = onTheAirTv;
+  );
+  tvShow.onTheAir_tv = onTheAirTv.data;
 
   return tvShow;
 }
@@ -168,15 +168,15 @@ export async function getTvShow() {
 export async function getTv(id: number) {
   const tv = <IgetTv>{};
 
-  const tv_detail = await fetch(
+  const tv_detail = await axios.get(
     `${BASE_PATH}/tv/${id}?api_key=${API_KEY}&language=ko-KR`
-  ).then((response) => response.json());
-  tv.tv_detail = tv_detail;
+  );
+  tv.tv_detail = tv_detail.data;
 
-  const similar_tv = await fetch(
+  const similar_tv = await axios.get(
     `${BASE_PATH}/tv/${id}/similar?api_key=${API_KEY}&language=ko-KR&page=1`
-  ).then((response) => response.json());
-  tv.similar_tvShow = similar_tv;
+  );
+  tv.similar_tvShow = similar_tv.data;
 
   return tv;
 }
@@ -184,21 +184,20 @@ export async function getTv(id: number) {
 export async function getSearchData(text: string | null) {
   const searchData = <IGetSearchData>{};
 
-  const searchMovies = await fetch(
-    `${BASE_PATH}/search/movie?api_key=${API_KEY}&language=ko-KR&query=${text}&page=1&include_adult=true&region=kr`
-  ).then((response) => response.json());
-  searchData.search_movies = searchMovies;
+  const searchMovies = await axios.get(
+    `${BASE_PATH}/search/movie?api_key=${API_KEY}&language=ko-KR&query=${text}&page=1&include_adult=false&region=kr`
+  );
+  searchData.search_movies = searchMovies.data;
 
-  const searchTvShow = await fetch(
-    `${BASE_PATH}/search/tv?api_key=${API_KEY}&language=ko-KR&query=${text}&page=1&include_adult=true&region=kr`
-  ).then((response) => response.json());
-  searchData.search_tvShow = searchTvShow;
+  const searchTvShow = await axios.get(
+    `${BASE_PATH}/search/tv?api_key=${API_KEY}&language=ko-KR&query=${text}&page=1&include_adult=false&region=kr`
+  );
+  searchData.search_tvShow = searchTvShow.data;
 
   return searchData;
 }
 
-// export async function getMovies() {
-//   return await axios(
-//     `${BASE_PATH}/movie/now_playing?api_key=${API_KEY}&language=ko-KR&page=1&region=kr`
-//   );
-// }
+/** feath시 then 사용하고 json파씽 */
+// const searchTvShow = await fetch(
+//   `${BASE_PATH}/search/tv?api_key=${API_KEY}&language=ko-KR&query=${text}&page=1&include_adult=false&region=kr`
+// ).then((response) => response.json());

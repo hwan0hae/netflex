@@ -17,7 +17,7 @@ const SliderWrapper = styled(motion.div)`
     margin-bottom: 13vw;
   }
 `;
-//슬라이더 타이틀이랑 이미지 간격 확인
+
 const SliderTitle = styled(motion.div)`
   margin-bottom: 10px;
   font-size: 1.5vw;

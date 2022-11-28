@@ -3,6 +3,7 @@ import { motion, useAnimation, useScroll } from "framer-motion";
 import { Link, useMatch, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+
 const Nav = styled(motion.div)`
   display: flex;
   align-items: center;
